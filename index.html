@@ -15,6 +15,8 @@
       </div>
       <div class="header-actions">
         <button id="loadSampleBtn" class="secondary">Load Sample Data</button>
+        <button id="printReportBtn" class="secondary">Print Report</button>
+        <button id="downloadReportHtmlBtn" class="secondary">Download Report HTML</button>
         <button id="runValuationBtn">Run Valuation</button>
       </div>
     </header>
@@ -28,6 +30,16 @@
       <section class="panel">
         <h2>Projection Setup</h2>
         <div id="projectionSetupContainer"></div>
+      </section>
+
+      <section class="panel full-width">
+        <h2>Drafts & Data Portability</h2>
+        <div id="savedDraftsContainer"></div>
+      </section>
+
+      <section class="panel full-width">
+        <h2>Report Branding & Output</h2>
+        <div id="reportSettingsContainer"></div>
       </section>
 
       <section class="panel full-width">
@@ -77,6 +89,8 @@
       </section>
     </main>
   </div>
+
+  <input id="importDraftFile" type="file" accept=".json,application/json" hidden />
 
   <script src="app.js"></script>
 </body>
