@@ -1,0 +1,75 @@
+{
+  "companyName": "Example Co",
+  "currency": "USD",
+  "projectionYears": 5,
+  "projectionYearsComment": "Five years is used because the business is still scaling but visibility beyond five years is limited.",
+  "assumptions": {
+    "wacc": {
+      "value": 10,
+      "comment": "Blended discount rate used for DCF.",
+      "explanation": "Assume 4.5% risk-free rate, 1.15 beta, 5.5% equity risk premium, after-tax cost of debt 5.8%, and target capital structure of 75% equity / 25% debt."
+    },
+    "terminalGrowth": {
+      "value": 2.5,
+      "comment": "Long-term growth aligned with inflation and mature GDP-like growth."
+    },
+    "taxRate": {
+      "value": 25,
+      "comment": "Normalized corporate tax rate."
+    },
+    "sharesOutstanding": {
+      "value": 100,
+      "comment": "Fully diluted shares outstanding."
+    },
+    "netDebt": {
+      "value": 150,
+      "comment": "Debt less cash."
+    },
+    "peMultiple": {
+      "value": 12,
+      "comment": "Reference P/E multiple based on peer set."
+    }
+  },
+  "drivers": {
+    "revenue": {
+      "label": "Revenue",
+      "baseValue": 1000,
+      "mode": "trend",
+      "trendValues": [10, 9, 8, 7, 6],
+      "manualValues": [1100, 1199, 1295, 1386, 1469],
+      "comment": "Top-line growth declines gradually as the company matures."
+    },
+    "costOfRevenue": {
+      "label": "Cost of Revenue",
+      "baseValue": 420,
+      "mode": "trend",
+      "trendValues": [8, 7, 7, 6, 5],
+      "manualValues": [454, 486, 520, 551, 579],
+      "comment": "Cost growth remains below revenue growth due to scale."
+    },
+    "gaExpense": {
+      "label": "General & Administrative Expense",
+      "baseValue": 140,
+      "mode": "trend",
+      "trendValues": [5, 5, 4, 4, 4],
+      "manualValues": [147, 154, 160, 166, 173],
+      "comment": "G&A grows slower than revenue as operating leverage improves."
+    },
+    "interestCost": {
+      "label": "Interest Cost",
+      "baseValue": 24,
+      "mode": "manual",
+      "trendValues": [0, 0, 0, 0, 0],
+      "manualValues": [24, 23, 22, 21, 20],
+      "comment": "Interest cost trends down as debt amortizes."
+    },
+    "workingCapitalMovement": {
+      "label": "Working Capital Movement",
+      "baseValue": 18,
+      "mode": "manual",
+      "trendValues": [0, 0, 0, 0, 0],
+      "manualValues": [20, 22, 24, 25, 26],
+      "comment": "Working capital investment rises with scale."
+    }
+  }
+}
