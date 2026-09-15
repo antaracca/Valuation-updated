@@ -3,6 +3,16 @@
   "currency": "USD",
   "projectionYears": 5,
   "projectionYearsComment": "Five years is used because the business is still scaling but visibility beyond five years is limited.",
+  "reportSettings": {
+    "title": "Valuation Report",
+    "subtitle": "DCF and Comparable Valuation Summary",
+    "preparedBy": "Corporate Finance Team",
+    "headerLeft": "Confidential",
+    "headerRight": "Internal Discussion Draft",
+    "footerNote": "This report is prepared for discussion purposes only and should not be construed as investment advice.",
+    "logoUrl": "",
+    "coverNote": "This valuation report presents the operating forecast assumptions, DCF analysis, comparable valuation framework, and sensitivity outcomes for management review."
+  },
   "assumptions": {
     "wacc": {
       "value": 10,
