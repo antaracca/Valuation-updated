@@ -7,9 +7,9 @@
   --primary: #1d4ed8;
   --primary-dark: #1e40af;
   --secondary: #eef2ff;
-  --success: #ecfdf5;
   --highlight: #eff6ff;
   --danger: #b91c1c;
+  --success: #ecfdf5;
 }
 
 * {
@@ -74,6 +74,14 @@ button.secondary:hover {
   background: #111827;
 }
 
+button.danger {
+  background: #b91c1c;
+}
+
+button.danger:hover {
+  background: #991b1b;
+}
+
 .grid-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -104,7 +112,8 @@ button.secondary:hover {
 }
 
 .assumption-card,
-.driver-card {
+.driver-card,
+.report-card {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 14px;
@@ -112,7 +121,8 @@ button.secondary:hover {
 }
 
 .assumption-card h3,
-.driver-card h3 {
+.driver-card h3,
+.report-card h3 {
   margin: 0 0 12px;
   font-size: 16px;
 }
@@ -139,6 +149,7 @@ label {
 
 input[type="number"],
 input[type="text"],
+input[type="url"],
 select,
 textarea {
   width: 100%;
@@ -155,7 +166,7 @@ textarea {
 }
 
 .small-input {
-  max-width: 130px;
+  max-width: 160px;
 }
 
 .driver-grid {
@@ -250,12 +261,78 @@ th {
   color: var(--muted);
 }
 
-.metric-positive {
-  color: #065f46;
-}
-
 .metric-negative {
   color: var(--danger);
+}
+
+.saved-drafts-grid,
+.report-settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.meta-text {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.inline-help {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.logo-preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: #fff;
+  margin-top: 8px;
+}
+
+.logo-preview img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 4px;
+}
+
+.logo-fallback {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1d4ed8, #0f172a);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo-preview-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cover-note {
+  min-height: 110px;
 }
 
 @media (max-width: 1100px) {
@@ -263,7 +340,9 @@ th {
     grid-template-columns: 1fr;
   }
 
-  .assumptions-grid {
+  .assumptions-grid,
+  .saved-drafts-grid,
+  .report-settings-grid {
     grid-template-columns: 1fr;
   }
 
