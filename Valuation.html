@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valuation App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <h1>Valuation App</h1>
+        <p class="muted">Dynamic operating forecast + DCF + comparable valuation</p>
+      </div>
+      <div class="header-actions">
+        <button id="loadSampleBtn" class="secondary">Load Sample Data</button>
+        <button id="runValuationBtn">Run Valuation</button>
+      </div>
+    </header>
+
+    <main class="grid-layout">
+      <section class="panel">
+        <h2>General Assumptions</h2>
+        <div id="assumptionsContainer" class="assumptions-grid"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Projection Setup</h2>
+        <div id="projectionSetupContainer"></div>
+      </section>
+
+      <section class="panel full-width">
+        <h2>Operating Forecast Inputs</h2>
+        <div id="driversContainer"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Valuation Summary</h2>
+        <div id="summaryContainer" class="summary-grid">
+          <div class="summary-card">
+            <span class="label">DCF Equity Value</span>
+            <strong id="dcfEquityValue">-</strong>
+          </div>
+          <div class="summary-card">
+            <span class="label">DCF Value / Share</span>
+            <strong id="dcfValuePerShare">-</strong>
+          </div>
+          <div class="summary-card">
+            <span class="label">Comparable Equity Value</span>
+            <strong id="compEquityValue">-</strong>
+          </div>
+          <div class="summary-card">
+            <span class="label">Comparable Value / Share</span>
+            <strong id="compValuePerShare">-</strong>
+          </div>
+          <div class="summary-card highlight">
+            <span class="label">Blended Value / Share</span>
+            <strong id="blendedValuePerShare">-</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Forecast Output</h2>
+        <div class="table-wrap">
+          <table id="forecastTable"></table>
+        </div>
+      </section>
+
+      <section class="panel full-width">
+        <h2>DCF Sensitivity</h2>
+        <p class="muted">Sensitivity of DCF value/share to WACC and terminal growth.</p>
+        <div class="table-wrap">
+          <table id="sensitivityTable"></table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
